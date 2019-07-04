@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>esphomeyaml</Name>
-  <Date>2019-01-07</Date>
+  <Name>AdGuard Home</Name>
+  <Date>2019-07-11</Date>
   <Repository>siwatinc/adguard_home</Repository>
   <Registry/>
   <Network>bridge</Network>
@@ -16,35 +16,18 @@
   <Icon>https://raw.githubusercontent.com/SiwatINC/unraid-ca-repository/master/icons/adguard.png</Icon>
   <ExtraParams/>
   <PostArgs/>
-  <Config Name="Dashboard Password" Target="password" Default="changeme" Mode="" Description="The Password for ESPHOME Dashboard" Type="Variable" Display="always" Required="true" Mask="true"/>
   <Networking>
     <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort>6123</HostPort>
-        <ContainerPort>6123</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-      <Port>
-        <HostPort>6052</HostPort>
-        <ContainerPort>6052</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
   </Networking>
   <Data>
-    <Volume>
-      <HostDir>/mnt/user/appdata/esphomeyaml</HostDir>
-      <ContainerDir>/config</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
   </Data>
   <DonateText>If you like it, then consider buying me a soda as I don't like beer :P</DonateText>
   <DonateLink>https://www.paypal.me/siwatsirichai</DonateLink>
   <DonateImg>https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif</DonateImg>
   <Environment/>
   <Labels/>
-  <Config Name="Configuration Folder" Target="/config" Default="/mnt/user/appdata/esphomeyaml" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/esphomeyaml</Config>
-  <Config Name="Communication" Target="6123" Default="6123" Mode="tcp" Description="Communication Port" Type="Port" Display="advanced" Required="false" Mask="false">6123</Config>
-  <Config Name="WebUI" Target="6052" Default="6052" Mode="tcp" Description="WebUI Port" Type="Port" Display="advanced" Required="false" Mask="false">6052</Config>
+  <Config Name="Working Directory" Target="/opt/adguardhome/work" Default="/mnt/user/appdata/adguard_home/workingdir" Mode="rw" Description="Working Directory" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/adguard_home/workingdir</Config>
+    <Config Name="Working Directory" Target="/opt/adguardhome/conf" Default="/mnt/user/appdata/adguard_home/config" Mode="rw" Description="Configuration Directory" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/adguard_home/config</Config>
+  <Config Name="WebUI" Target="3000" Default="3000" Mode="tcp" Description="Port for the Web UI" Type="Port" Display="advanced" Required="false" Mask="false">3000</Config>
+  <Config Name="DNS Server" Target="53" Default="53" Mode="tcp" Description="Port that is used for the DNS Server (Changing this is not recomended)" Type="Port" Display="advanced" Required="false" Mask="false">53</Config>
 </Container>
